@@ -6,10 +6,10 @@ Rails.application.initialize!
 
 #Configure SendGrid credentials
 ActionMailer::Base.smtp_settings = {
-  :user_name => 'trishaanand',
-  :password => 'Akadora1#1990',
+  :user_name => 'trisha1990@gmail.com',
+  :password => 'iEkFiJiAlK0LbEUNN-PZlg',
   :domain => 'trishaanand.com',
-  :address => 'smtp.sendgrid.net',
+  :address => 'smtp.mandrillapp.com',
   :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true

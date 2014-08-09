@@ -1,16 +1,19 @@
 class MainController < ApplicationController
   def ifttt
-  	random_number_generator
-  	# if trigger
-  	# 	action
-  	# else
-  	# 	@res = "Phoooo :|"
-  	# end
+  	@tuple = Tuple.find(params[:id])
+
+    #data returned from the channel definition
+    data = Array.new
+    if (@tuple.channel_id == 1)
+      random_number_generator
+      data = {'rnd_nm' => @num}  
+    else
+      #do nothing right now
+    end
+  	
   	triggerVar = BaseTrigger.new
   	msg = Array.new
-  	data = Array.new
-  	data = {'rnd_nm' => @num}
-  	msg = {'channel_id' => 1, 'data' => data}
+  	msg = {'tuple' => @tuple, 'data' => data}
   	puts "Going to execute"
   	@output_view = triggerVar.exec(msg)
    end
