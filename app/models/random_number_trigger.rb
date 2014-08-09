@@ -5,6 +5,7 @@ class RandomNumberTrigger
 		# tuple = {'channel_id' => 1, 'trigger_id' => 1, 'action_id' => 1, 'triggerValue' => 0.5, 
 		# 	'triggerCondition' => "<", 'action_data' => ""}
 		puts "*******Trisha check_trigger_condition***********************************************************"
+		@user = User.find(1)
 		puts msg["tuple"]["triggerCondition"].to_s
 		msg["tuple"]["triggerCondition"] = "gt"
 		puts msg["tuple"]["actionData"].to_s
@@ -12,7 +13,7 @@ class RandomNumberTrigger
 		if msg["tuple"]["triggerCondition"] == "lt"
 			if msg["data"]["rnd_nm"] < msg["tuple"]["triggerValue"].to_f
 				@output_view = "Yay! Win"
-				UserMailer.send_trigger_email(1,2).deliver
+				UserMailer.send_trigger_email(@user, 1).deliver
 				puts "Email sent"
 			else
 				@output_view = "Woops"
@@ -21,7 +22,7 @@ class RandomNumberTrigger
 			puts "HERE ****"
 			if msg["data"]["rnd_nm"] > msg["tuple"]["triggerValue"].to_f
 				@output_view = "Yay! Win"
-				UserMailer.send_trigger_email(1,2).deliver
+				UserMailer.send_trigger_email(@user, 1).deliver
 				puts "Email sent"
 			else
 				@output_view = "Woops"
@@ -29,7 +30,7 @@ class RandomNumberTrigger
 		elsif msg["tuple"]["triggerCondition"] == "et"
 			if msg["data"]["rnd_nm"] == msg["tuple"]["triggerValue"].to_f
 				@output_view = "Yay! Win"
-				UserMailer.send_trigger_email(1,2).deliver
+				UserMailer.send_trigger_email(@user, 1).deliver
 				puts "Email sent"
 			else
 				@output_view = "Woops"

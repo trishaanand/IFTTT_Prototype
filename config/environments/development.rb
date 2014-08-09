@@ -21,7 +21,7 @@ Rails.application.configure do
    :port                 => 587,
    :domain               => 'trishaanand.com',
    :user_name            => 'trishaanand@gmail.com',
-   :password             => 'CuZIel74dPh73-33OVAEKQ',
+   :password             => 'iEkFiJiAlK0LbEUNN-PZlg',
    :authentication       => 'plain',
    :enable_starttls_auto => true  }
   # Print deprecation notices to the Rails logger.
