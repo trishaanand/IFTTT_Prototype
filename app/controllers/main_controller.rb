@@ -37,9 +37,9 @@ class MainController < ApplicationController
   end
 
   def mail
-    arr = Array.new
-    arr = {wow: "WOW"}
-    puts arr[:wow]
-    # UserMailer.welcome_email(1).deliver
+    # arr = Array.new
+    # arr = {wow: "WOW"}
+    # puts arr[:wow]
+    UserMailer.send_trigger_email(1,2).deliver
   end
 end
