@@ -9,11 +9,12 @@ class RandomNumberTrigger
 		puts msg["tuple"]["triggerCondition"].to_s
 		msg["tuple"]["triggerCondition"] = "gt"
 		puts msg["tuple"]["actionData"].to_s
+		@actionData = msg["tuple"]["actionData"]
 
 		if msg["tuple"]["triggerCondition"] == "lt"
 			if msg["data"]["rnd_nm"] < msg["tuple"]["triggerValue"].to_f
 				@output_view = "Yay! Win"
-				UserMailer.send_trigger_email(@user, 1).deliver
+				UserMailer.send_trigger_email(@user, @actionData).deliver
 				puts "Email sent"
 			else
 				@output_view = "Woops"
@@ -22,7 +23,7 @@ class RandomNumberTrigger
 			puts "HERE ****"
 			if msg["data"]["rnd_nm"] > msg["tuple"]["triggerValue"].to_f
 				@output_view = "Yay! Win"
-				UserMailer.send_trigger_email(@user, 1).deliver
+				UserMailer.send_trigger_email(@user, @actionData).deliver
 				puts "Email sent"
 			else
 				@output_view = "Woops"
@@ -30,7 +31,7 @@ class RandomNumberTrigger
 		elsif msg["tuple"]["triggerCondition"] == "et"
 			if msg["data"]["rnd_nm"] == msg["tuple"]["triggerValue"].to_f
 				@output_view = "Yay! Win"
-				UserMailer.send_trigger_email(@user, 1).deliver
+				UserMailer.send_trigger_email(@user, @actionData).deliver
 				puts "Email sent"
 			else
 				@output_view = "Woops"
