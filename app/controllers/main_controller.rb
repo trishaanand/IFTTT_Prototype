@@ -32,4 +32,11 @@ class MainController < ApplicationController
   def action
   	@res = "Tada!!!!!"
   end
+
+  def mail
+    arr = Array.new
+    arr = {wow: "WOW"}
+    puts arr[:wow]
+    # UserMailer.welcome_email(1).deliver
+  end
 end
