@@ -1,0 +1,3 @@
+class RandomNumberGenerator
+	
+end
