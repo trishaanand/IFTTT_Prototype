@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'main/ifttt'
+  get 'main/ifttt/:id' , to: 'main#ifttt'
   get 'trigger/test'
   get 'main/mail'
   

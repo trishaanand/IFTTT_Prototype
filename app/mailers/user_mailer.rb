@@ -1,10 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: 'trishaanand@icloud.com'
+  default from: "trisha1990@gmail.com"
 
-  def welcome_email(user)
-    @user = user
-    @url  = 'http://arpitmohan.com'
-    mail(to: 'arpit@clinknow.com', 
-    	subject: 'Welcome to My Awesome Site')
+  def send_trigger_email(a, b)
+  	# @user = user
+  	puts "Its getting triggered bitch"
+  	mail(to: 'mohanarpit@gmail.com', subject: 'Trigger generated')#,	body: 'This works!')
   end
 end
