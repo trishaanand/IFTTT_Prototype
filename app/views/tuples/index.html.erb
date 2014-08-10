@@ -8,27 +8,25 @@
       <th>Action</th>
       <th>Triggervalue</th>
       <th>Triggercondition</th>
-      <th>Actionfields</th>
-      <th>Actiondata</th>
-      <th colspan="3"></th>
+      <th colspan="6"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody>  
+    <tr><td>&nbsp;</td></tr>
     <% @tuples.each do |tuple| %>
       <tr>
         <td><%= tuple.channel.name %></td>
-        <td><%= tuple.trigger_id %></td>
+        <td><%= tuple.trigger.name %></td>
         <td><%= tuple.action.name %></td>
         <td><%= tuple.triggerValue %></td>
         <td><%= tuple.triggerCondition %></td>
-        <td><%= tuple.actionFields_id %></td>
-        <td><%= tuple.actionData %></td>
       
         <td><%= link_to 'Show', tuple %></td>
         <td><%= link_to 'Edit', edit_tuple_path(tuple) %></td>
         <td><%= link_to 'Destroy', tuple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <tr><td>&nbsp;</td></tr>
     <% end %>
   </tbody>
 </table>

@@ -45,6 +45,25 @@ input {
 	-webkit-appearance: none;
 }
 
+input, select {
+                width: 250px;
+                padding: 0;
+                margin: 0;
+                height: 50px;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+select {
+    border: 1px solid #000;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	padding: 0;
+	-webkit-appearance: none;
+}
+
 p {
 	line-height: 1.5em;
 }
