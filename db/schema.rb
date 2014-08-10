@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810113446) do
+ActiveRecord::Schema.define(version: 20140810164357) do
 
   create_table "action_fields", force: true do |t|
     t.string   "fieldName"
@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(version: 20140810113446) do
   end
 
   add_index "triggers", ["channel_id"], name: "index_triggers_on_channel_id"
+
+  create_table "tuple_fakes", force: true do |t|
+    t.integer  "channel_id"
+    t.integer  "trigger_id"
+    t.integer  "action_id"
+    t.string   "triggerValue"
+    t.string   "triggerCondition"
+    t.integer  "actionFields_id"
+    t.text     "actionData"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tuples", force: true do |t|
     t.string   "triggerValue"
