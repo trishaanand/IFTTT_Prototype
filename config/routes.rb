@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'random' , to: 'random_number_generator#generate'
   get 'trigger/test'
-  get 'dropbox', to: 'dropbox_channel#index'
+  post 'dropboxnotifier', to: 'dropbox_channel#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

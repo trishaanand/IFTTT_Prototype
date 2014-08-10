@@ -5,6 +5,13 @@ Dropbox::API::Config.app_secret = 'a2hkeg8biof2nsb'
 Dropbox::API::Config.mode       = "dropbox"
 class DropboxChannelController < ApplicationController
 	def index
+		
+		if request.params["challenge"] != nil
+			puts "Inside challenge"
+			challenge = request.params["challenge"]
+	        challenge_response = challenge
+	        render plain: challenge_response, status: 200
+    	end
 		# APP_KEY = 'vb3n6yjuyrsq5i6'
 		# APP_SECRET = 'a2hkeg8biof2nsb'
 		# flow = DropboxOAuth2FlowNoRedirect.new(Dropbox::API::Config.app_key, Dropbox::API::Config.app_secret)
