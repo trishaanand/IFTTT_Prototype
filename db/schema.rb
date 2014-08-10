@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809105423) do
+ActiveRecord::Schema.define(version: 20140810113446) do
 
   create_table "action_fields", force: true do |t|
     t.string   "fieldName"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140809105423) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "data"
   end
 
   create_table "triggers", force: true do |t|

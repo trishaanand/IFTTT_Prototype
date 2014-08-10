@@ -40,3 +40,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # Adding gem file for mandrill-app
 gem 'mandrill-api'
+
+#Dropbox gems
+gem 'dropbox-sdk'
+gem 'dropbox-api'

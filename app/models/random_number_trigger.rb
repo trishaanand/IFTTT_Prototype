@@ -5,14 +5,13 @@ class RandomNumberTrigger
 		# tuple = {'channel_id' => 1, 'trigger_id' => 1, 'action_id' => 1, 'triggerValue' => 0.5, 
 		# 	'triggerCondition' => "<", 'action_data' => ""}
 		puts "*******Trisha check_trigger_condition***********************************************************"
+		puts msg
 		@user = User.find(1)
-		puts msg["tuple"]["triggerCondition"].to_s
-		msg["tuple"]["triggerCondition"] = "gt"
-		puts msg["tuple"]["actionData"].to_s
 		@actionData = msg["tuple"]["actionData"]
 
 		if msg["tuple"]["triggerCondition"] == "lt"
 			if msg["data"]["rnd_nm"] < msg["tuple"]["triggerValue"].to_f
+				puts "In lt *****"
 				@output_view = "Yay! Win"
 				UserMailer.send_trigger_email(@user, @actionData).deliver
 				puts "Email sent"
@@ -20,7 +19,7 @@ class RandomNumberTrigger
 				@output_view = "Woops"
 			end
 		elsif msg["tuple"]["triggerCondition"] == 'gt'
-			puts "HERE ****"
+			puts "In gt ******"
 			if msg["data"]["rnd_nm"] > msg["tuple"]["triggerValue"].to_f
 				@output_view = "Yay! Win"
 				UserMailer.send_trigger_email(@user, @actionData).deliver
@@ -28,8 +27,9 @@ class RandomNumberTrigger
 			else
 				@output_view = "Woops"
 			end
-		elsif msg["tuple"]["triggerCondition"] == "et"
+		elsif msg["tuple"]["triggerCondition"] == "eq"
 			if msg["data"]["rnd_nm"] == msg["tuple"]["triggerValue"].to_f
+				puts "In equals"
 				@output_view = "Yay! Win"
 				UserMailer.send_trigger_email(@user, @actionData).deliver
 				puts "Email sent"
