@@ -4,7 +4,11 @@ class TuplesController < ApplicationController
   # GET /tuples
   # GET /tuples.json
   def index
-    puts "ijnkjkjhkjhkjh"
+    if current_user
+      @c_user = current_user
+    else
+      redirect_to new_user_session_path, notice: 'You are not logged in.'
+    end
     @tuples = Tuple.all
     @newTuples = Array.new
     @tuples.each do |f|

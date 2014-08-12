@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :tuple_fakes
   resources :tuples
   
   get 'random' , to: 'random_number_generator#generate'
   get 'trigger/test'
   post 'dropboxnotifier', to: 'dropbox_channel#index'
+  get 'sendtext' , to: 'send_text#send_text_message'
+  get 'sendcall/makecall' , to: 'send_call#makecall'
+  post 'sendcall/voice', to: 'send_call#voice'
+  get 'sendcall/voice', to: 'send_call#voice'
+
+
 
   get 'main' , to: 'main#index'
   # The priority is based upon order of creation: first created -> highest priority.

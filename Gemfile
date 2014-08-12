@@ -44,3 +44,8 @@ gem 'mandrill-api'
 #Dropbox gems
 gem 'dropbox-sdk'
 gem 'dropbox-api'
+
+#twilio gem
+gem 'twilio-ruby'
+
+gem 'devise'
