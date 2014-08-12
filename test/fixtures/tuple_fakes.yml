@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  channel_id: 
+  trigger_id: 
+  action_id: 
+  triggerValue: 
+  triggerCondition: 
+  actionFields_id: 
+  actionData: MyText
+
+two:
+  channel_id: 
+  trigger_id: 
+  action_id: 
+  triggerValue: 
+  triggerCondition: 
+  actionFields_id: 
+  actionData: MyText

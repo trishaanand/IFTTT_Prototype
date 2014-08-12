@@ -184,9 +184,9 @@
               <table class="full-width-gmail-android" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td class="header center" width="100%">
-                    <a href="http://www.petasense.com">
+                    <!-- <a href="#">
                       Petasense
-                    </a>
+                    </a> -->
                   </td>
                 </tr>
               </table>
@@ -214,9 +214,9 @@
                   </tr>
                   <tr>
                     <td style="padding-bottom:20px;">
-                      Hello <%=@user.name%>, <br>
+                      Hello, <%= @user.name %><br>
                       <br>
-                      Congratulations! Your trigger has been fired for some channel.<br>
+                      Congratulations! Your trigger has been fired.<br>
                       <br>
                       <!--
                       <b><a class="blue-link" href="#">Track shipping</a></b>
@@ -225,10 +225,10 @@
                   </tr>
                   <tr>
                   	<td>
-                  		Data
+                  		Random Number Generated
                   	</td>
                   	<td>
-                  		<%=@data%>
+                  		<%= @data%>
                   	</td>
                   </tr>
                 </table>

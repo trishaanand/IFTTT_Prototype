@@ -1,0 +1,38 @@
+
+<p>
+  <strong>Channel:</strong>
+  <%= @tuple.channel_id %>
+</p>
+
+<p>
+  <strong>Trigger:</strong>
+  <%= @tuple.trigger_id %>
+</p>
+
+<p>
+  <strong>Action:</strong>
+  <%= @tuple.action_id %>
+</p>
+
+<p>
+  <strong>Triggervalue:</strong>
+  <%= @tuple.triggerValue %>
+</p>
+
+<p>
+  <strong>Triggercondition:</strong>
+  <%= @tuple.triggerCondition %>
+</p>
+
+<p>
+  <strong>Actionfieldid:</strong>
+  <%= @tuple.actionFieldID %>
+</p>
+
+<p>
+  <strong>Actiondata:</strong>
+  <%= @tuple.actionData %>
+</p>
+
+<%= link_to 'Edit', edit_tuple_path(@tuple) %> |
+<%= link_to 'Back', tuples_path %>

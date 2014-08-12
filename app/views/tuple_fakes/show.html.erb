@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Channel:</strong>
+  <%= @tuple_fake.channel_id %>
+</p>
+
+<p>
+  <strong>Trigger:</strong>
+  <%= @tuple_fake.trigger_id %>
+</p>
+
+<p>
+  <strong>Action:</strong>
+  <%= @tuple_fake.action_id %>
+</p>
+
+<p>
+  <strong>Triggervalue:</strong>
+  <%= @tuple_fake.triggerValue %>
+</p>
+
+<p>
+  <strong>Triggercondition:</strong>
+  <%= @tuple_fake.triggerCondition %>
+</p>
+
+<p>
+  <strong>Actionfields:</strong>
+  <%= @tuple_fake.actionFields_id %>
+</p>
+
+<p>
+  <strong>Actiondata:</strong>
+  <%= @tuple_fake.actionData %>
+</p>
+
+<%= link_to 'Edit', edit_tuple_fake_path(@tuple_fake) %> |
+<%= link_to 'Back', tuple_fakes_path %>

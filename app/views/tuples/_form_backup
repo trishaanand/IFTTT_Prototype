@@ -1,0 +1,87 @@
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Login - CodePen</title>
+
+    <!-- <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" /> -->
+    <%= stylesheet_link_tag "style" %>
+</head>
+
+<body>
+
+  <html lang="en-US">
+<head>
+
+  <meta charset="utf-8">
+
+  <title>Login</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+<%= form_for(@tuple) do |f| %>
+  <% if @tuple.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tuple.errors.count, "error") %> prohibited this tuple from being saved:</h2>
+
+      <ul>
+      <% @tuple.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!--
+  <div class="field">
+    <%= f.label :channel_id %><br>
+    <%= f.text_field :channel_id %>
+  </div>
+-->
+<fieldset class="clearfix">
+
+  <div class="field">
+  <%= f.collection_select :channel_id, Channel.all, :id, :name %>
+  
+<!--     <%= f.label :trigger_id %><br>
+    <%= f.text_field :trigger_id %> -->
+  </div>
+ 
+  <div class="field">
+  <%= f.collection_select :trigger_id, Trigger.all, :id, :name %>
+   </div>
+ <div class="field">
+  <%= f.collection_select :action_id, Action.all, :id, :name %> 
+</div>
+
+  <div class="field">
+    <%= f.label :triggerValue %><br>
+    <%= f.text_field :triggerValue %>
+  </div>
+
+  <div class="field">
+    <%= f.label :triggerCondition %><br>
+    <%= f.text_field :triggerCondition %>
+  </div>
+  <!-- <div class="field">
+    <%= f.label :actionFields_id %><br>
+    <%= f.text_field :actionFields_id %>
+  </div> --><!-- 
+  <div class="field">
+    <%= f.label :actionData %><br>
+    <%= f.text_area :actionData %>
+  </div> -->
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</fieldset>
+</body>

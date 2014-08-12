@@ -1,0 +1,49 @@
+  
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <div id="login">
+
+      <%= form_for(@tuple) do |f| %>
+      <% if @tuple.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@tuple.errors.count, "error") %> prohibited this tuple from being saved:</h2>
+
+        <ul>
+          <% @tuple.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+
+      <fieldset class="clearfix">
+
+        <p>
+          <%= f.collection_select :channel_id, Channel.all, :id, :name %>
+        </p>
+        <br />
+        <p>
+          <%= f.collection_select :trigger_id, Trigger.all, :id, :name %>
+        </p>
+        <br />
+        <p><span class="fontawesome-user"></span>
+          <%= f.text_field :triggerValue, :value => "Trigger Value", 
+          :onBlur=>"if(this.value == '') this.value = 'Trigger Value';",
+          :onFocus=>"if(this.value == 'Trigger Value') this.value = '';"%>
+        </p>
+        <br />
+        <p><span class="fontawesome-user"></span>
+          <%= f.text_field :triggerCondition , :value => "Trigger Condition (lt,gt,eq)"%>
+        </p>
+        <br />
+      </fieldset>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+
+      <% end %>
+    </div> <!-- end login -->
