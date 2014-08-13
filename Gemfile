@@ -49,3 +49,5 @@ gem 'dropbox-api'
 gem 'twilio-ruby'
 
 gem 'devise'
+
+gem 'pg'
