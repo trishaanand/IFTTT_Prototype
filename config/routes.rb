@@ -12,6 +12,7 @@
   get 'trigger/test'
   get 'main/mail'
   post 'dropboxnotifier', to: 'dropbox_channel#index'
+  get 'dropboxnotifier', to: 'dropbox_channel#index'
   get 'sendtext' , to: 'send_text#send_text_message'
   get 'sendcall/makecall' , to: 'send_call#makecall'
   post 'sendcall/voice', to: 'send_call#voice'
