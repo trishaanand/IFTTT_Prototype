@@ -1,6 +1,6 @@
   Rails.application.routes.draw do
   
-  get '/' => 'tuples#index', :as => root 
+  root :to => 'tuples#index', :as => root 
 
   devise_for :users do
     get 'logout' => 'devise/sessions#destroy'
