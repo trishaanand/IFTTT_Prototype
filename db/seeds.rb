@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Action.create(name: "sendmail", id: 1)
+Action.create(name: "sendsms", id: 2)
+
+Channel.create(name: "Random Number Generator", id: 1)
+Channel.create(name: "Dropbox", id: 1)
+
+Trigger.create(name: "Files Changed", channel_id: 2 )
+Trigger.create(name: "Value Comparison", channel_id: 1 )
+
+

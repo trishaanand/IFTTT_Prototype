@@ -74,7 +74,12 @@ class MainController < ApplicationController
     end
   end
 
-  private
+  def mail
+    # arr = Array.new
+    # arr = {wow: "WOW"}
+    # puts arr[:wow]
+    UserMailer.send_trigger_email(1,2).deliver
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_tuple
       @tuple = Tuple.find(params[:id])
