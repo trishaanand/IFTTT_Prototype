@@ -1,6 +1,6 @@
 class DropboxTrigger
 	def check_trigger_condition(msg)
-		@user = User.find(1)
+		@action = msg['tuple'].action
 		@length = msg['data'].length
 		if @length != 0
 			@output_view = "Yay! Win"
@@ -16,7 +16,15 @@ class DropboxTrigger
 				temp = {'path' => data['path'], 'status' => var}
 				dataToMail.push(temp)
 			end
-			UserMailer.send_dropbox_email(@user, dataToMail).deliver
+			
+			if @action.name == "sendmail"
+				UserMailer.send_dropbox_email(msg['tuple'].user, dataToMail).deliver
+			elsif @action.name == "sendsms"
+			puts "********************************************************************"
+			puts @action.name
+				@obj = SendText.new	
+				@obj.send_text_message(msg['tuple'].user)
+			end
 			puts "Email sent"
 		else
 			puts "Length zero"

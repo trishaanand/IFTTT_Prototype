@@ -1,5 +1,7 @@
-Rails.application.routes.draw do
-  devise_for :users
+  Rails.application.routes.draw do
+  devise_for :users do
+    get 'logout' => 'devise/sessions#destroy'
+  end
   resources :tuple_fakes
   resources :tuples
   

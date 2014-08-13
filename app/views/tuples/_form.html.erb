@@ -30,6 +30,10 @@
           <%= f.collection_select :trigger_id, Trigger.all, :id, :name %>
         </p>
         <br />
+        <p>
+          <%= f.collection_select :action_id, Action.all, :id, :name %>
+        </p>
+        <br />
         <p><span class="fontawesome-user"></span>
           <%= f.text_field :triggerValue, :value => "Trigger Value", 
           :onBlur=>"if(this.value == '') this.value = 'Trigger Value';",

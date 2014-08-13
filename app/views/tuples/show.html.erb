@@ -1,13 +1,17 @@
 
+<p>
+  <strong>User:</strong>
+  <%= @tuple.user.email %>
+</p>
 
 <p>
   <strong>Channel:</strong>
-  <%= @tuple.channel_id %>
+  <%= @tuple.channel.name %>
 </p>
 
 <p>
   <strong>Trigger:</strong>
-  <%= @tuple.trigger_id %>
+  <%= @tuple.trigger.name %>
 </p>
 
 <p>

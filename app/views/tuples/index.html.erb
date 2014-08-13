@@ -25,7 +25,7 @@
       <th></th>
       <th>Triggervalue</th>
       <th></th>
-      <th>Triggercondition</th>
+      <th>Action</th>
       <th></th>
       <th colspan="100"></th>
     </tr>
@@ -35,13 +35,15 @@
     <tr><td>&nbsp;</td></tr>
     <% @tuples.each do |tuple| %>
       <tr>
+        <td><%= tuple.user.email %></td>
+        <td></td>
         <td><%= tuple.channel.name %></td>
         <td></td>
         <td><%= tuple.trigger.name %></td>
         <td></td>
         <td><%= tuple.triggerValue %></td>
         <td></td>
-        <td><%= tuple.triggerCondition %></td>
+        <td><%= tuple.action.name %></td>
         <td></td>
       
         <td><%= link_to 'Show', tuple %></td>

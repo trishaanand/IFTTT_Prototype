@@ -35,7 +35,7 @@ class TuplesController < ApplicationController
   # POST /tuples.json
   def create
     @tuple = Tuple.new(tuple_params)
-
+    @tuple.user = current_user
     respond_to do |format|
       if @tuple.save
         format.html { redirect_to @tuple, notice: 'Tuple was successfully created.' }
