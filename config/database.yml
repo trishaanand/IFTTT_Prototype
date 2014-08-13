@@ -22,6 +22,6 @@ test:
 
 production:
   adapter: postgresql
-  host: ec2-54-204-45-126.compute-1.amazonaws.com
-  database: d1heamssai4skd
-  password: Ws5y3K9lDcr_TIrIjDooiv8FSU
+  host: ec2-54-225-101-64.compute-1.amazonaws.com
+  database: d4th74ks1rlhn2
+  password: BOGQWgAUDHWJ63DVO9D_rGyUOP
